@@ -1,0 +1,12 @@
+{
+  "name": "com.nomad.build-tools",
+  "version": "1.0.0",
+  "displayName": "Nomad Build Tools",
+  "description": "Tools to launch Unity builds from a CD/CI system",
+  "author": {
+    "name": "Javier Garcia de la Cita",
+    "email": "javier.garciadelacita@gmail.com",
+    "url": "https://github.com/javierdelacita"
+  },
+  "type": "tool"
+}
