@@ -5,11 +5,5 @@ namespace Nomad.BuildTools.Editor
         Development,
         Release
     }
-
-    public enum BuildPlatform
-    {
-        Ios,
-        Android
-    }
 }
 

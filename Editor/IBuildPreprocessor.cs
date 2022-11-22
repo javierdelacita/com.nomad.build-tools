@@ -2,6 +2,6 @@ namespace Nomad.BuildTools.Editor
 {
     public interface IBuildPreprocessor
     {
-        void Preprocess();
+        void PreprocessStep(BuildConfiguration buildConfig);
     }
 }
