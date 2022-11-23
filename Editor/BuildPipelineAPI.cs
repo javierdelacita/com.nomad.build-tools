@@ -2,7 +2,7 @@ using System;
 using Nomad.BuildTools.Editor;
 using UnityEditor;
 
-namespace Nomad.Buildtools.Editor
+namespace Nomad.BuildTools.Editor
 {
     public static class BuildPipelineAPI
     {
