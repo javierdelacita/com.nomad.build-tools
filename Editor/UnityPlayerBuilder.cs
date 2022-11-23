@@ -77,14 +77,23 @@ namespace Nomad.BuildTools.Editor
                     outputPath,
                     PlayerSettings.productName.Replace(" ", "") + fileExtension);
             }
+
+            var buildOptions = buildConfig.Options;
             
+            // When building an iOS or Android project, we can add the AcceptExternalModificationsToPlayer in order to 
+            // support incremental builds
+            if (BuildPipeline.BuildCanBeAppended(buildConfig.Target, outputPath) == CanAppendBuild.Yes)
+            {
+                buildOptions |= BuildOptions.AcceptExternalModificationsToPlayer;
+            }
+
             var buildPlayerOptions = new BuildPlayerOptions
             {
                 scenes = EditorBuildSettings.scenes.Select(scene => scene.path).ToArray(),
                 locationPathName = outputPath,
                 target = buildConfig.Target,
                 targetGroup = BuildPipeline.GetBuildTargetGroup(buildConfig.Target),
-                options = buildConfig.Options
+                options = buildOptions
             };
             
             var buildReport = BuildPipeline.BuildPlayer(buildPlayerOptions);
